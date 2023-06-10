@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+button,
+button:active,
+button:focus,
+input {
+  border: 0;
+  outline: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #8ebe96;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+/* ======================== */
+/* add
+/* ======================== */
+.add {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(80, 120, 156);
+  display: flex;
+}
+.add__input {
+  width: calc(100% - 95px);
+  height: 40px;
+  margin: 15px 15px 0 15px;
+  padding: 15px;
+  border-radius: 5px;
+  color: rgb(2, 106, 124);
+}
+.add__btn {
+  margin-top: 15px;
+}
+
+/* ======================== */
+/* item
+/* ======================== */
+.item {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #8ebe96;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item__text {
+  display: inline-block;
+  width: calc(100% - 65px);
+  height: 50px;
+  padding: 10px;
+  color: rgb(2, 124, 87);
+}
+button {
+  display: block;
+  width: 50px;
+  height: 40px;
+  /* position: absolute; */
+  margin: 10px 0;
+  background-color: #8ebe96;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+button:hover {
+  background: rgb(209, 209, 17);
+}
