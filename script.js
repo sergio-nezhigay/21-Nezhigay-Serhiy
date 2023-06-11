@@ -51,12 +51,41 @@ function delItem(pos) {
   saveInLocalSt();
 }
 
+// function editItem(pos) {
+//   const newText = prompt("enter new text instead of ", localSt[pos]) || "";
+//   localSt[pos] = newText;
+//   render();
+//   saveInLocalSt();
+//   console.log("🚀 ~ file: script.js:56 ~ editItem ~ newText:", newText);
+// }
+
 function editItem(pos) {
-  const newText = prompt("enter new text instead of ", localSt[pos]) || "";
-  localSt[pos] = newText;
-  render();
-  saveInLocalSt();
-  console.log("🚀 ~ file: script.js:56 ~ editItem ~ newText:", newText);
+  const itemText = localSt[pos];
+  const input = document.createElement("input");
+  input.type = "text";
+  input.value = itemText;
+  const saveBtn = document.createElement("button");
+  saveBtn.innerText = "Save";
+  saveBtn.addEventListener("click", function () {
+    const newText = input.value;
+    if (newText) {
+      localSt[pos] = newText;
+      render();
+      saveInLocalSt();
+    }
+  });
+
+  const cancelBtn = document.createElement("button");
+  cancelBtn.innerText = "Cancel";
+  cancelBtn.addEventListener("click", render);
+
+  const editContainer = document.createElement("div");
+  editContainer.classList.add("edit__cont");
+  editContainer.append(input, saveBtn, cancelBtn);
+
+  items__cont.replaceChild(editContainer, items__cont.childNodes[pos]);
+
+  input.focus();
 }
 
 function saveInLocalSt() {
